@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타워 디펜스 - 맵 에디터</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="gameArea">
+            <canvas id="gameCanvas" width="896" height="512"></canvas>
+            <div id="tilePanel">
+                <h3 id="panelTitle" style="cursor: pointer; user-select: none;">타일 선택</h3>
+                <div id="tileOptions"></div>
+                <div id="enemyOptions" style="display: none;"></div>
+                <input type="text" id="mapFileName" placeholder="맵 파일명 (예: stage1)" value="stage1">
+                <button id="saveButton">맵 저장</button>
+            </div>
+        </div>
+        <div id="operatorPanel">
+            <h3>유닛</h3>
+            <div id="operatorList"></div>
+        </div>
+    </div>
+    <div id="retreatPanel" class="hidden">
+        <button id="retreatYes">퇴각</button>
+    </div>
+    <script src="js/operator.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/map/stage1.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
