@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>타워 디펜스 - 맵 에디터</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>제작중</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;         /* 새까만 화면 */
+      color: #fff;              /* 하얀색 글씨 */
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 3rem;
+    }
+  </style>
 </head>
 <body>
-    <div id="container">
-        <div id="gameArea">
-            <canvas id="gameCanvas" width="896" height="512"></canvas>
-            <div id="tilePanel">
-                <h3 id="panelTitle" style="cursor: pointer; user-select: none;">타일 선택</h3>
-                <div id="tileOptions"></div>
-                <div id="enemyOptions" style="display: none;"></div>
-                <input type="text" id="mapFileName" placeholder="맵 파일명 (예: stage1)" value="stage1">
-                <button id="saveButton">맵 저장</button>
-            </div>
-        </div>
-        <div id="operatorPanel">
-            <h3>유닛</h3>
-            <div id="operatorList"></div>
-        </div>
-    </div>
-    <div id="retreatPanel" class="hidden">
-        <button id="retreatYes">퇴각</button>
-    </div>
-    <script src="js/operator.js"></script>
-    <script src="js/enemy.js"></script>
-    <script src="js/map/stage1.js"></script>
-    <script src="js/main.js"></script>
+  <div id="text"></div>
+
+  <script>
+    const fullText = "제 작 중 . . .";        // '제'부터 '중'까지
+    const textEl = document.getElementById("text");
+    let index = 0;
+
+    function showNextChar() {
+      if (index <= fullText.length) {
+        textEl.textContent = fullText.slice(0, index); // 제 → 제작 → 제작중
+        index++;
+      } else {
+        clearInterval(timer); // 다 나오면 멈춤
+      }
+    }
+
+    // 700ms마다 한 글자씩
+    const timer = setInterval(showNextChar, 700);
+  </script>
 </body>
 </html>
-
