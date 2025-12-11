@@ -1,0 +1,222 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background: #1a1a1a url('../png/background.jpg') center center / cover no-repeat fixed;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+#gameArea {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#controlsPanel {
+    width: 200px;
+    min-height: 512px;
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #444;
+    flex-shrink: 0;
+}
+
+#controlsPanel h3 {
+    margin: 0 0 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+}
+
+#controlsContent {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+#controlsContent p {
+    margin: 10px 0;
+}
+
+#gameCanvas {
+    border: 2px solid #444;
+    background: #000;
+    flex-shrink: 0;
+    width: 704px;
+    height: 512px;
+}
+
+#tilePanel {
+    width: 250px;
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    display: none;
+}
+
+#tilePanel.visible {
+    display: block;
+}
+
+.tile-option {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin: 8px 0;
+    background: #333;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.tile-option:hover {
+    background: #444;
+}
+
+.tile-option.selected {
+    background: #555;
+    border: 2px solid #1e90ff;
+}
+
+.tile-preview {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #666;
+    margin-right: 12px;
+    border-radius: 4px;
+}
+
+.tile-name {
+    flex: 1;
+}
+
+#saveButton {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#saveButton:hover {
+    background: #1c7ed6;
+}
+
+#mapFileName {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#tilePanel h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+#operatorPanel {
+    width: 100%;
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 120px;
+}
+
+#operatorPanel h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+#operatorList {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.operator-item {
+    width: 60px;
+    height: 60px;
+    background: #333;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    border: 2px solid #555;
+    transition: transform 0.2s;
+}
+
+.operator-item:hover {
+    transform: scale(1.1);
+    border-color: #1e90ff;
+}
+
+.operator-item:active {
+    cursor: grabbing;
+}
+
+.operator-item.dragging {
+    opacity: 0.5;
+}
+
+#retreatPanel {
+    position: absolute;
+    background: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #1e90ff;
+    z-index: 1000;
+}
+
+#retreatPanel.hidden {
+    display: none;
+}
+
+#retreatPanel h4 {
+    margin: 0 0 10px 0;
+}
+
+#retreatPanel button {
+    padding: 8px 16px;
+    margin: 5px;
+    background: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#retreatPanel button:hover {
+    background: #1c7ed6;
+}
+
+.deployed-operator {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #4ade80;
+    border: 3px solid #22c55e;
+    cursor: pointer;
+    pointer-events: all;
+}
+

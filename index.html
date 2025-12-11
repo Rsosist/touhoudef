@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타워 디펜스</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="gameArea">
+            <div id="controlsPanel">
+                <h3>조작법</h3>
+                <div id="controlsContent">
+                    <p>아래의 유닛 창에서 유닛을 선택하여 드래그해 맵에 배치합니다.<br><br>
+                        배치 후 마름모 안을 클릭하여 드래그해 유닛의 공격 방향을 결정합니다.<br><br>
+                        맵의 우측 하단에는 코스트가 표시되어 있으며 <br>유닛을 배치하기 위해서는 코스트가 필요합니다.<br><br>
+                        
+                        유닛은 스킬을 가지고 있고 체력바 밑의 게이지가 모두 찬 뒤 <br>자동으로 발동되거나 유닛을 클릭하면 오른쪽 밑의 버튼으로 발동할 수 있습니다.<br><br>
+
+                    </p>
+                </div>
+            </div>
+            <div style="position: relative; display: inline-block;">
+                <canvas id="gameCanvas" width="704" height="512"></canvas>
+                <button id="pauseButton" style="position: absolute; top: 8px; right: 8px; width: 40px; height: 40px; background: rgba(0, 0, 0, 0.7); border: 2px solid #ffffff; border-radius: 4px; color: #ffffff; font-size: 18px; cursor: pointer; z-index: 1000; display: flex; align-items: center; justify-content: center;">⏸</button>
+            </div>
+            <div id="tilePanel">
+                <h3 id="panelTitle" style="cursor: pointer; user-select: none;">타일 선택</h3>
+                <div id="tileOptions"></div>
+                <div id="enemyOptions" style="display: none;"></div>
+                <input type="text" id="mapFileName" placeholder="맵 파일명 (예: stage1)" value="stage1">
+                <button id="saveButton">맵 저장</button>
+            </div>
+        </div>
+        <div id="operatorPanel">
+            <h3>유닛</h3>
+            <div id="operatorList"></div>
+        </div>
+    </div>
+    <div id="retreatPanel" class="hidden">
+        <button id="retreatYes">퇴각</button>
+    </div>
+    <script src="js/operator.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/map/stage1.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
